@@ -8,7 +8,7 @@ Dance Party - OpenSocial service implementations for BuddyPress
 Description
 -----------
 
-Implements of OpenSocial services using BuddyPress functionality.
+Implementations of OpenSocial services using BuddyPress functionality.
 
 License
 -------
