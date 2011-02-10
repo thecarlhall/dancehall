@@ -1,4 +1,4 @@
-=== Dance Party === 
+=== Dance Hall === 
 Contributors: Carl Hall <carl@hallwaytech.com>
 Tags: opensocial, buddypress, social networking
 Requires at least: 3.1
