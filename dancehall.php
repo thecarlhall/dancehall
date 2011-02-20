@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name: Dance Party
-Plugin URI: http://github.com/thecarlhall/danceparty
+Plugin Name: DanceHall
+Plugin URI: http://github.com/thecarlhall/dancehall
 Description: OpenSocial service implementations for BuddyPress.
 Version: 0.1
 Author: Carl Hall
@@ -23,3 +23,27 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
+require_once WP_PLUGIN_DIR.'/dancehall/wp-restful.php';
+
+function dh_fields() {
+	return array(
+		'Activities' => array(),
+		'Albums' => array(),
+		'People' => array(
+			'personId' => 'Person ID',
+			'name' => 'Person Name')
+	);
+}
+
+function dh_activity_pluralization() {
+	return array('Activity' => 'Activities');
+}
+
+function dh_person_pluralization() {
+	return array('Person' => 'People');
+}
+
+wpr_add_plugin('dh_fields');
+
+wpr_add_pluralization('dh_activity_pluralization');
+wpr_add_pluralization('dh_person_pluralization');
