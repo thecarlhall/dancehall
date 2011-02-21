@@ -3,7 +3,12 @@ class PersonRESTController extends WPAPIRESTController {
 	protected function __construct() {}
 	
 	protected function getPeople() {
+		// required fields: id, name, thumbnailUrl
 		return $this->_return(array('personId' => '1', 'name' => 'ch1411'));
+	}
+	
+	protected function getPerson($person = 0) {
+		return $this->_return(array('personId' => '2', 'name' => 'ch1412'));
 	}
 	
 	/**
