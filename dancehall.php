@@ -47,7 +47,9 @@ function dancehall_uninstall() {
 
 function dancehall_fields() {
 	return array(
-		'Activities' => array(
+		'Activities' => array(),
+		/*
+		array(
 			'id' => 'Activity ID',
 			'user_id' => 'User ID',
 			'component' => 'Component where activity happened',
@@ -68,9 +70,11 @@ function dancehall_fields() {
 			'user_fullname' => "User's full name",
 			'total' => 'Total activities returned'
 		),
+		*/
 		'Albums' => array(),
 		'AppData' => array(),
-		'Groups' => array(
+		'Groups' => array(),
+		/*
 			'id' => 'Group ID',
 			'creator_id' => "Group's Creator ID",
 			'name' => 'Name of the Group',
@@ -80,14 +84,43 @@ function dancehall_fields() {
 			'enable_forum' => 'Whether the forums are enabled',
 			'date_created' => 'Date group was created',
 			'admins' => 'Admins of the group',
-			'total' => 'Total groups returned'),
+			'total' => 'Total groups returned'
+		),
+		*/
 		'MediaItems' => array(),
-		'Messages' => array()
+		'Messages' => array(),
+		/*
+			'id' => 'Message ID',
+			'thread_id' => 'Thread ID',
+			'sender_id' => 'Sender ID',
+          	'subject' => 'Subject',
+          	'message' => 'Message',
+          	'date_sent' => 'Date sent',
+			'user_id' => 'User ID',
+			'unread_count' => 'Unread count',
+			'sender_only' => 'Sender only',
+			'is_deleted' => 'Deleted',
+			'messages_order' => 'Messages order',
+			'total' => 'Total'
+		),
+		*/
+		'People' => array()
+		/*
+			'ID' => 'Person ID',
+			'user_login' => 'Username',
+			'display_name' => 'Display name',
+			'user_nicename' => 'Nice name',
+			'user_email' => 'Email',
+			'user_url' => 'URL',
+			'user_registered' => 'Registration date',
+    		'user_status' => 'Status'
+    	)
+    	*/
 	);
 }
 
 function dancehall_pluralization() {
-	return array('activity' => 'activities', 'appdata' => 'appdata');
+	return array('activity' => 'activities', 'appdata' => 'appdata', 'person' => 'people');
 }
 
 wpr_add_plugin('dancehall_fields');

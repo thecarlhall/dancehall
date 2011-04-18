@@ -1,24 +1,20 @@
 <?php
 class PersonRESTController extends WPAPIRESTController {
+	// filter includes all fields except user_pass and user_activation_key
+	var $filter = array('ID', 'user_login', 'display_name', 'user_nicename', 'user_email', 'user_url', 'user_registered', 'user_status');
+
 	protected function __construct() {}
 	
 	protected function getPeople() {
-		// required fields: id, name, thumbnailUrl
-		return $this->_return(array('personId' => '1', 'name' => 'ch1411'));
+		return get_users();
+		return $this->_return(get_users(), $filter);
 	}
 	
-	protected function getPerson($person = 0) {
-		return $this->_return(array('personId' => '2', 'name' => 'ch1412'));
+	protected function getPerson($person = null) {
+		return $this->_return(get_users(array('include' => $person)), $filter);
 	}
 	
-	/**
-	 * Apply request filter
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return (mixed) filtered content
-	 */
-	private function _return($content) {
-		return wpr_filter_content($content, wpr_get_filter('People'));
+	protected function deletePeople() {
+		return $this->_return(get_users(array('include' => $_POST['id'])), $filter);
 	}
 }
