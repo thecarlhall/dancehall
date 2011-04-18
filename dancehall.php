@@ -72,7 +72,7 @@ function dancehall_fields() {
 		),
 		*/
 		'Albums' => array(),
-		'AppData' => array(),
+		'Application Data' => array(),
 		'Groups' => array(),
 		/*
 			'id' => 'Group ID',
@@ -87,7 +87,7 @@ function dancehall_fields() {
 			'total' => 'Total groups returned'
 		),
 		*/
-		'MediaItems' => array(),
+		'Media Items' => array(),
 		'Messages' => array(),
 		/*
 			'id' => 'Message ID',

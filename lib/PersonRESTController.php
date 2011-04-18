@@ -6,15 +6,14 @@ class PersonRESTController extends WPAPIRESTController {
 	protected function __construct() {}
 	
 	protected function getPeople() {
-		return get_users();
-		return $this->_return(get_users(), $filter);
+		return wpr_filter_content(get_users(), $this->filter);
 	}
 	
 	protected function getPerson($person = null) {
-		return $this->_return(get_users(array('include' => $person)), $filter);
+		return wpr_filter_content(get_users(array('include' => $person)), $this->filter);
 	}
 	
 	protected function deletePeople() {
-		return $this->_return(get_users(array('include' => $_POST['id'])), $filter);
+		return wpr_filter_content(get_users(array('include' => $_POST['id'])), $this->filter);
 	}
 }
